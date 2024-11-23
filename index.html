@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Библиотека gsp + scrollTrigger + CustomEase-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/CustomEase.min.js"></script>
+
+		<script
+			src="https://kit.fontawesome.com/dd9033bdf1.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="./src/styles/main.css" />
+
+		<title>Greeting Page | WEB</title>
+	</head>
+
+	<body class="loading" id="top">
+		<button class="loadBtn"><a href="#top">кнопка</a></button>
+		<div class="bg"></div>
+		<nav>
+			<ul>
+				<li><div class="logo"></div></li>
+				<li><a href="#" class="highlight">PROJECTS</a></li>
+				<li><a href="#studio">STUDIO</a></li>
+				<li><a href="#contact">CONTACT</a></li>
+				<li><b>WEB</b></li>
+			</ul>
+		</nav>
+
+		<div class="header-wrp">
+			<header class="slide1 active">
+				<h2 class="title1"><span>za</span></h2>
+				<h2 class="title2"><span>un</span></h2>
+				<div class="images">
+					<div class="img i1">
+						<img src="./static/images/Zaun/img1.jpg" alt="" />
+					</div>
+					<div class="img i2">
+						<img src="./static/images/Zaun/img2.jpg" alt="" />
+					</div>
+					<div class="img i3">
+						<img src="./static/images/Zaun/img3.jpg" alt="" />
+					</div>
+					<div class="img i4">
+						<img src="./static/images/Zaun/img4.jpg" alt="" />
+					</div>
+					<div class="img i5">
+						<img src="./static/images/Zaun/img5.jpg" alt="" />
+					</div>
+					<div class="img i6">
+						<img src="./static/images/Zaun/img6.jpg" alt="" />
+					</div>
+				</div>
+			</header>
+
+			<header class="slide2">
+				<h2 class="title1"><span>PILTOVER</span></h2>
+				<h2 class="title2"><span>PROGRESS</span></h2>
+				<div class="images">
+					<div class="img i1">
+						<img src="./static/images/Piltover/img1.jpg" alt="" />
+					</div>
+					<div class="img i2">
+						<img src="./static/images/Piltover/img2.jpg" alt="" />
+					</div>
+					<div class="img i3">
+						<img src="./static/images/Piltover/img3.jpg" alt="" />
+					</div>
+					<div class="img i4">
+						<img src="./static/images/Piltover/img4.jpg" alt="" />
+					</div>
+					<div class="img i5">
+						<img src="./static/images/Piltover/img5.jpg" alt="" />
+					</div>
+					<div class="img i6">
+						<img src="./static/images/Piltover/img6.jpg" alt="" />
+					</div>
+				</div>
+			</header>
+
+			<header class="slide3">
+				<h2 class="title1"><span>IONIA</span></h2>
+				<h2 class="title2"><span>HARMONY</span></h2>
+				<div class="images">
+					<div class="img i1">
+						<img src="./static/images/Ionia/img1.jpg" alt="" />
+					</div>
+					<div class="img i2">
+						<img src="./static/images/Ionia/img2.png" alt="" />
+					</div>
+					<div class="img i3">
+						<img src="./static/images/Ionia/img3.jpg" alt="" />
+					</div>
+					<div class="img i4">
+						<img src="./static/images/Ionia/img4.jpg" alt="" />
+					</div>
+					<div class="img i5">
+						<img src="./static/images/Ionia/img5.jpg" alt="" />
+					</div>
+					<div class="img i6">
+						<img src="./static/images/Ionia/img6.jpg" alt="" />
+					</div>
+				</div>
+			</header>
+
+			<header class="slide4">
+				<h2 class="title1"><span>NOKSUS</span></h2>
+				<h2 class="title2"><span>POWER</span></h2>
+				<div class="images">
+					<div class="img i1">
+						<img src="./static/images/Noksus/img1.jpg" alt="" />
+					</div>
+					<div class="img i2">
+						<img src="./static/images/Noksus/img2.jpg" alt="" />
+					</div>
+					<div class="img i3">
+						<img src="./static/images/Noksus/img3.jpg" alt="" />
+					</div>
+					<div class="img i4">
+						<img src="./static/images/Noksus/img4.jpg" alt="" />
+					</div>
+					<div class="img i5">
+						<img src="./static/images/Noksus/img5.jpg" alt="" />
+					</div>
+					<div class="img i6">
+						<img src="./static/images/Noksus/img6.jpg" alt="" />
+					</div>
+				</div>
+			</header>
+
+			<div class="controls">
+				<ul>
+					<li class="active"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+
+			<div class="arrows">
+				<svg width="40" height="50">
+					<line
+						x1="0"
+						y1="25"
+						x2="40"
+						y2="0"
+						style="stroke: rgb(200, 200, 200); stroke-width: 2"
+					/>
+					<line
+						x1="0"
+						y1="25"
+						x2="40"
+						y2="50"
+						style="stroke: rgb(200, 200, 200); stroke-width: 2"
+					/>
+				</svg>
+
+				<svg width="40" height="50">
+					<line
+						x1="0"
+						y1="0"
+						x2="40"
+						y2="25"
+						style="stroke: rgb(200, 200, 200); stroke-width: 2"
+					/>
+					<line
+						x1="0"
+						y1="50"
+						x2="40"
+						y2="25"
+						style="stroke: rgb(200, 200, 200); stroke-width: 2"
+					/>
+				</svg>
+			</div>
+
+			<div class="socials">
+				<a href="https://vk.com/godforkings" target="_blank"
+					><i class="fa-brands fa-vk"></i
+				></a>
+				<a href="https://t.me/GodForKings" target="_blank"
+					><i class="fa-brands fa-telegram"></i
+				></a>
+				<a href="https://github.com/GodForKings" target="_blank"
+					><i class="fa-brands fa-github"></i
+				></a>
+			</div>
+
+			<a href="#studio" class="arrowDown"
+				>about us <i class="fa-solid fa-arrow-down"></i
+			></a>
+			<!-- Временной промежуток слайда -->
+			<div class="slideProgress"></div>
+		</div>
+
+		<!-- Секция тех -->
+		<div class="studio-section" id="studio">
+			<div class="screensaver">
+				<div class="screensaver-content">
+					<span>about us</span>
+					<img
+						src="static/images/Creensaver/js-brands-solid.svg"
+						width="50"
+						alt=""
+					/>
+					<span>about us</span>
+					<img
+						src="static/images/Creensaver/node-brands-solid.svg"
+						width="50"
+						alt=""
+					/>
+					<span>about us</span>
+					<img
+						src="static/images/Creensaver/react-brands-solid.svg"
+						width="50"
+						alt=""
+					/>
+				</div>
+				<div class="screensaver-content">
+					<span>about us</span>
+					<img
+						src="static/images/Creensaver/js-brands-solid.svg"
+						width="50"
+						alt=""
+					/>
+					<span>about us</span>
+					<img
+						src="static/images/Creensaver/node-brands-solid.svg"
+						width="50"
+						alt=""
+					/>
+					<span>about us</span>
+					<img
+						src="static/images/Creensaver/react-brands-solid.svg"
+						width="50"
+						alt=""
+					/>
+				</div>
+			</div>
+
+			<div class="technologies">
+				<div class="technologies-element">
+					<div class="row">
+						<h3 class="title">ReactJS</h3>
+						<div class="tags">
+							<span>update</span>
+						</div>
+					</div>
+					<div class="img-wrp">
+						<img src="./static/images/technologies/ReactJs.png" alt="" />
+					</div>
+				</div>
+
+				<div class="technologies-element">
+					<div class="row">
+						<h3 class="title">NodeJS</h3>
+						<div class="tags">
+							<span></span>
+						</div>
+					</div>
+					<div class="img-wrp">
+						<img src="./static/images/technologies/NodeJS.png" alt="" />
+					</div>
+				</div>
+
+				<div class="technologies-element">
+					<div class="row">
+						<h3 class="title">MobX</h3>
+						<div class="tags">
+							<span></span>
+						</div>
+					</div>
+					<div class="img-wrp">
+						<img src="./static/images/technologies/MobX.png" alt="" />
+					</div>
+				</div>
+
+				<div class="technologies-element">
+					<div class="row">
+						<h3 class="title">JavaScript</h3>
+						<div class="tags">
+							<span>!!!</span>
+						</div>
+					</div>
+					<div class="img-wrp">
+						<img src="./static/images/technologies/js.gif" alt="" />
+					</div>
+				</div>
+			</div>
+
+			<a href="#contact" class="technologies-button">contact us</a>
+		</div>
+
+		<div class="contact" id="contact">
+			<div class="contact-grid"></div>
+		</div>
+
+		<div class="c cursor"></div>
+		<div class="c cursor-follow"></div>
+
+		<script src="./src/components/script.js" defer></script>
+	</body>
+</html>
