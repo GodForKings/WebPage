@@ -1,6 +1,21 @@
 gsap.registerPlugin(CustomEase)
 gsap.registerPlugin(ScrollTrigger)
 
+// Анимация загрузки
+
+gsap.from(
+	'nav',
+	{ y: '-100%', opacity: 0, ease: 'power3.out', duration: 1.3 },
+	1
+)
+gsap.from('.controls', { x: '20px', opacity: 0, duration: 1 }, 1.3)
+gsap.from('.arrows', { opacity: 0, duration: 1 }, 1.3)
+gsap.from(
+	'.header-wrp .socials, .header-wrp .arrowDown',
+	{ x: '20px', opacity: 0, duration: 1 },
+	1.3
+)
+
 //Логика курсора
 window.addEventListener('mousemove', e => {
 	gsap.to('.cursor', { x: e.clientX, y: e.clientY })
@@ -79,6 +94,7 @@ function closeImage(img) {
 	img.target.parentNode.classList.remove('crossCursor')
 
 	gsap.to('.c', { opacity: 1 })
+	pausedSlider = false
 }
 
 function init() {
@@ -414,7 +430,7 @@ async function startProgressBar() {
 	setInterval(() => {
 		if (pausedSlider) return
 
-		// progressSeconds += 0.1
+		progressSeconds += 0.1
 
 		if (progressSeconds >= 8) {
 			changeSlide((slide % 4) + 1)

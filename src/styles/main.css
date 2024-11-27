@@ -17,7 +17,7 @@ body {
 	background: #000;
 	color: #fff;
 	font-family: sans-serif;
-	height: 100vh;
+	min-height: 100vh;
 	position: relative;
 }
 
@@ -124,7 +124,7 @@ nav ul li div.logo {
 	background-position: center;
 	background-repeat: no-repeat; */
 	background: url('../../static/images/bg_img.jpg');
-	opacity: 0.3;
+	opacity: 0.4;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -532,19 +532,21 @@ header.active {
 .img-wrp img {
 	height: 100%;
 	object-fit: cover;
-	transition: opacity 0.5s ease-out;
+	transition: opacity 0.3s ease-out;
 }
 
 .img-wrp img:hover {
 	opacity: 0.6;
 }
 
+/* contact us btn */
+
 .technologies-button {
-	margin-top: 2rem;
-	margin-bottom: 5rem;
+	position: relative;
+	margin: 2rem 0 5rem 0;
 	padding: 1rem 2rem;
-	border: 1px solid white;
-	transition: background 0.5s ease;
+	border: 2px solid white;
+	transition: background 0.3s ease;
 	text-transform: uppercase;
 }
 
@@ -553,12 +555,79 @@ header.active {
 	color: #000;
 }
 
-.loadBtn {
-	inset: 0 0 0;
-	color: white;
-	position: sticky;
-	z-index: 99;
+/* contacts section */
+
+.contact {
+	min-height: 75vh;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding-top: 5rem;
+	background: #000;
 }
-.loadBtn a {
-	color: black;
+
+.contact h2 {
+	text-transform: uppercase;
+	font-size: 13rem;
+	line-height: 14rem;
+	padding: 0;
+	margin: 0;
+	border: 2px solid #fff;
+	background-color: #000;
+	z-index: 2;
+	position: relative;
+	font-size: clamp(0px, 20vw, 13rem);
+}
+.contact-grid {
+	position: relative;
+	display: grid;
+}
+
+.contact .row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.contact .row h2 {
+	text-transform: uppercase;
+	-webkit-text-stroke: 2px;
+	-webkit-text-fill-color: #000;
+}
+.contact .socials p,
+.contacts p {
+	padding-block: 2rem;
+	text-transform: uppercase;
+}
+
+.socials,
+.contacts {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: #000;
+}
+.socials ul,
+.contact ul {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	flex-direction: column;
+}
+.contact ul li {
+	padding: 1rem;
+}
+
+.contact ul li a {
+	color: #fff;
+	transition: color 0.3s ease;
+	text-decoration: underline #b3aa91;
+}
+
+.contact ul li a:hover {
+	color: #b3aa91;
+}
+
+.contact p:last-child {
+	padding: 1.5rem;
 }
