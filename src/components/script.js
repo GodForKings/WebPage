@@ -1,12 +1,23 @@
 gsap.registerPlugin(CustomEase)
 gsap.registerPlugin(ScrollTrigger)
 
-// Анимация загрузки
+// Анимация загрузки при старте
 
 gsap.from(
 	'nav',
-	{ y: '-100%', opacity: 0, ease: 'power3.out', duration: 1.3 },
-	1
+	{ y: '-100%', opacity: 0, ease: 'power3.out', duration: 1 },
+	0.8
+)
+gsap.from(
+	'nav ul li img.logo',
+	{
+		x: '-50%',
+		y: '-50%',
+		opacity: 0,
+		duration: 2,
+		rotate: '1000deg',
+	},
+	1.8
 )
 gsap.from('.controls', { x: '20px', opacity: 0, duration: 1 }, 1.3)
 gsap.from('.arrows', { opacity: 0, duration: 1 }, 1.3)
@@ -134,12 +145,12 @@ let ease = CustomEase.create(
 
 tl1.from(
 	'.slide1 .i1 img',
-	{ y: '110%', opacity: 0, ease: ease, duration: 1, scaleY: 0.5 },
+	{ y: '-110%', opacity: 0, ease: ease, duration: 1, scaleX: 0.3 },
 	0.7
 )
 tl1.from(
 	'.slide1 .i2 img',
-	{ x: '110%', opacity: 0, ease: ease, duration: 1, scaleY: 0.5 },
+	{ x: '110%', opacity: 0, ease: ease, duration: 1, scaleY: 0.2 },
 	0.2
 )
 tl1.from(
@@ -181,7 +192,7 @@ tl1.fromTo(
 tl1.fromTo(
 	'.slide1 .title2 span',
 	{
-		y: '40%',
+		y: '-40%',
 		opacity: 0,
 		duration: 1,
 		ease: 'power3.out',
@@ -455,3 +466,58 @@ prevArrow.addEventListener('click', () => {
 nextArrow.addEventListener('click', () => {
 	changeSlide(slide == 4 ? 1 : slide + 1)
 })
+
+// Анимация всплытия секции "технологии" при прокрутки
+try {
+	const gridTl = gsap.timeline({
+		scrollTrigger: {
+			trigger: '.technologies',
+			start: 'top center',
+			scrub: 1,
+			toggleActions: 'restart none none none',
+		},
+	})
+
+	const gridElementsTech = [
+		...document.querySelectorAll('.technologies .technologies-element'),
+	]
+
+	gridElementsTech.forEach((element, index) => {
+		gridTl.from(
+			`.technologies .technologies-element:nth-child(${index + 1}) .row *`,
+			{ y: '150%', duration: 1 },
+			0.3 * index
+		)
+		gridTl.from(
+			`.technologies .technologies-element:nth-child(${index + 1}) .img-wrp`,
+			{ height: 0, duration: 1 },
+			0.3 * 1
+		)
+		gridTl.from(
+			`.technologies .technologies-element:nth-child(${index + 1}) img`,
+			{ scale: 0.5, duration: 1.4, ease: 'power3.out' },
+			0.3 * index
+		)
+	})
+
+	gridTl.from('.technologies', { height: 0, duration: 2 }, 0)
+} catch (error) {
+	console.log(error)
+}
+
+// Анимация всплытия секции "контакты" при прокрутки
+
+const scrollTI = gsap.timeline({
+	scrollTrigger: {
+		trigger: '.technologies .technologies-element:last-child',
+		start: 'top+=100 top',
+		end: '+=200',
+		scrub: 1,
+		toggleActions: 'restart none none none',
+	},
+})
+
+scrollTI.to('#studio .technologies', { y: '-20%', opacity: 0 }, 0)
+// добавьте затухание и вытянуть ряд
+scrollTI.from('.contact-grid', { y: '20%', opacity: 0 }, 0.3)
+scrollTI.from('.contact-grid .row', { y: '-100%', opacity: 0 }, 0.3)
